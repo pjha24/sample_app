@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_params)
     if @user.save 
+      log_in @user
       flash[:success] = "Welcome to the Sample APP!"
       redirect_to @user  #same as user_url(@user)... Rails is smart
     else 
