@@ -157,3 +157,16 @@ input, textarea, select, .uneditable-input{
 .alert-success{
     border: 5px dashed green;
 }
+
+.checkbox{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    span{
+        margin-left: 20px;
+        font-weight: strong;
+    }
+}
+#session_remember_me{
+    width: auto;
+    margin-left: 0;
+}
