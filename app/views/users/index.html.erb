@@ -1,0 +1,9 @@
+<% provide(:title, 'All Users') %>
+<h1>All Users</h1>
+<%= will_paginate %>            <!--using paginate gem -->
+<ul class = "users">
+    <% @users.each do |user| %>
+        <%= render user %>      <!-- Rails looks for partial _user-->
+    <% end %>
+</ul>
+<%= will_paginate %>

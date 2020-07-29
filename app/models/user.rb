@@ -13,7 +13,10 @@ class User < ApplicationRecord
 
 
     has_secure_password
-    validates :password , presence: true, length: {minimum: 6}
+    validates :password , presence: true, length: {minimum: 6}, allow_nil: true #ok to allow nil because has_secure_password 
+                                                                                #has an authentication for nil pws
+                                                                                #we are allowing nill to allow users to edit
+                                                                                #their info without changing their pw
     #returns hash of given string
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST:
