@@ -24,3 +24,11 @@ users = User.order(:created_at).take(6)         #grab the first 6 created users
     content = Faker::Lorem.sentence(word_count: 5)
     users.each { |user| user.microposts.create!(content: content)}
 end
+
+#creating following relationships
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each{ |followed| user.follow(followed)}           #user follows users 2-50
+followers.each{ |follower| follower.follow(user)}            #user is followed by users 3-40
